@@ -1,0 +1,70 @@
+create database hotelmanagementsystem;	
+
+show databases;
+
+use hotelmanagementsystem;
+
+create table login(username varchar(25), password varchar(25));
+
+insert into login values ('admin', '12345');
+
+select * from login;
+
+create table employee(name varchar(25), age varchar(10), gender varchar(15), job varchar(30), salary varchar(50), phone varchar(15), email varchar(40), aadhar varchar(20));
+
+desc employee;
+
+alter table employee add experience varchar(2);
+
+desc employee;
+
+select * from employee;
+
+alter table employee modify column experience integer;
+
+alter table employee modify column experience decimal(2,2);
+
+alter table employee modify column age decimal(2,0);
+
+alter table employee modify column salary decimal(6,0);
+
+alter table employee modify column phone decimal(12,0);
+
+alter table employee modify column aadhar decimal(12,0);
+
+alter table employee modify column experience decimal(2,0);
+
+create table rooms(room decimal(5,0), available varchar(20), cleaning varchar(20), price varchar(20), bed varchar(20) );
+
+desc rooms;
+alter table rooms rename column roomnumber to room;
+
+alter table rooms modify column price decimal(6,0);
+
+select * from rooms;
+update rooms set available = 'available' where room = 245;
+select * from rooms order by room;
+
+create table drivers(name varchar(30), age decimal(2.0), gender varchar(15), company varchar(20), brand varchar(20), avail varchar(20), locat varchar(40));
+alter table drivers add check (age>=18);
+
+desc drivers;
+Select * from drivers;
+update drivers set brand = 'X5' where name = 'Hopp';
+
+create table customer(id varchar(20), num varchar(20), name varchar(30), gender varchar(10), country varchar(30), room varchar(10), checkin varchar(40),  deposit varchar(20));  
+desc customer;
+select * from customer;
+
+delete from customers Where document = "Driving License";
+
+create table departments(department varchar(40), budget varchar(30));
+
+insert into departments values ('Front Office', '2000000');
+insert into departments values ('HouseKeeping', '900000');
+insert into departments values ('Food and Beverage', '2000000');
+insert into departments values ('Kitchen and Food Production', '5000000');
+insert into departments values ('Security', '1000000');
+
+Select * from departments;
+select * from departments order by department;
